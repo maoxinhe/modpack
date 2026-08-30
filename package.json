@@ -1,0 +1,21 @@
+{
+  "name": "modpack-release",
+  "version": "1.0.0",
+  "description": "梦之韵 Minecraft 模组包发布系统：mods 文件管理 + 自动打包上传 GitHub Releases + 网页面板 + 更新器",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^2.0.2"
+  }
+}

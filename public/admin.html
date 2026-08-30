@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之韵 · 模组管理后台</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="logo">🛠️</span>
+      <span>模组管理后台 <small>仅管理员可操作</small></span>
+    </div>
+    <div class="topbar-actions">
+      <span id="meArea"></span>
+      <a href="/" class="btn btn-sm">返回下载页</a>
+      <a href="/auth/logout" class="btn btn-danger btn-sm">退出登录</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- 未授权提示 -->
+    <div id="needLogin" class="card" hidden>
+      <h2>🔒 需要管理员权限</h2>
+      <p style="color:var(--muted); margin-bottom:16px;">请使用管理员 GitHub 账号登录后才能管理模组。</p>
+      <a href="/auth/login" class="btn btn-primary">使用 GitHub 登录</a>
+    </div>
+
+    <div id="panel" hidden>
+      <!-- 上传 -->
+      <div class="card">
+        <h2>⬆ 上传模组</h2>
+        <div class="file-drop" id="dropZone">
+          <div style="font-size:30px; margin-bottom:8px;">📦</div>
+          点击选择或拖拽 <b>.jar</b> 文件到此处上传<br>
+          <small>上传成功后自动打包并发布新版本到 GitHub Releases</small>
+          <input type="file" id="fileInput" accept=".jar">
+        </div>
+      </div>
+
+      <!-- 模组列表 -->
+      <div class="card">
+        <h2>🧩 当前模组 <span id="modCount" class="pill pill-gray" style="margin-left:6px;">0</span></h2>
+        <div id="modList" class="mod-list"><div class="empty">加载中…</div></div>
+      </div>
+
+      <!-- 手动发布 -->
+      <div class="card">
+        <h2>🚀 手动发布</h2>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <input id="publishMsg" class="input" style="flex:1; min-width:200px;" placeholder="本次更新说明（可选，会写入 Release 备注）">
+          <button id="publishBtn" class="btn btn-primary">发布新版本</button>
+        </div>
+        <p style="color:var(--muted); font-size:12px; margin-top:10px;">上传 / 重命名 / 删除模组后系统会自动发布；此按钮用于手动触发。</p>
+      </div>
+
+      <!-- 发布历史 -->
+      <div class="card">
+        <h2>📜 发布历史</h2>
+        <div id="releaseList" class="mod-list"><div class="empty">加载中…</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

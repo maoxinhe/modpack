@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之韵 · 模组包下载</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="logo">🎮</span>
+      <span>梦之韵模组包 <small>自动发布 · GitHub Releases</small></span>
+    </div>
+    <div class="topbar-actions">
+      <span id="meArea"></span>
+      <a href="/auth/login" id="loginBtn" class="btn btn-blue btn-sm" hidden>GitHub 登录</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <div id="verBadge" class="ver-badge">加载中...</div>
+      <div class="sub" id="verSub">正在获取最新版本信息…</div>
+      <div class="download-row">
+        <a id="downloadBtn" class="btn btn-primary big-btn" href="#" hidden>⬇ 下载最新模组包 (ZIP)</a>
+        <a id="releasesLink" class="btn big-btn" href="https://github.com/maoxinhe/modpack/releases" target="_blank" rel="noopener">查看全部版本</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🧩 模组包内容</h2>
+      <div id="modList" class="mod-list"><div class="empty">加载中…</div></div>
+    </div>
+
+    <div class="card">
+      <h2>📖 使用说明</h2>
+      <ol style="line-height:2; color:var(--muted); font-size:14px; padding-left:20px;">
+        <li>下载上方最新模组包 ZIP，解压后把所有 <code>.jar</code> 文件放入启动器的 <code>mods</code> 文件夹。</li>
+        <li>也可以使用 <b>自动更新器</b>（<code>mod-updater.exe</code>）：把它放进 <code>mods</code> 文件夹双击运行，即可自动拉取最新模组包并解压。</li>
+        <li>更换版本后重启游戏即可生效。</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
