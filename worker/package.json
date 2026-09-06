@@ -1,0 +1,18 @@
+{
+  "name": "modpack-release-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "梦之韵模组包：发布、下载、工单与崩溃分析后端（Cloudflare Worker）",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "migrate:d1": "node scripts/migrate-d1.mjs",
+    "recover": "node scripts/recover-queued.mjs",
+    "test": "node scripts/test-local.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
