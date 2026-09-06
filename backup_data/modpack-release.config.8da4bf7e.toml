@@ -1,0 +1,71 @@
+# modpack-release Worker —— 由线上部署反推生成（2026-09-06）
+# 来源：Cloudflare API /accounts/93fe0753b1dce058535acb744bb78794/workers/scripts/modpack-release
+# 注意：线上部分变量以明文形式存在（含密钥），本文件只保留非敏感项，
+#       敏感值请通过 `wrangler secret put <NAME>` 注入，不要写进文件。
+
+name = "modpack-release"
+main = "src/index.js"
+compatibility_date = "2025-08-01"
+
+# 静态资源（index.html / error-report.html 等）
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Cron 触发器（任务 2.2 计划改为 "*/5 * * * *"）
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+ADMIN_EMAIL = "catkinr@qq.com"
+ADMIN_INIT_PASSWORD = "<REDACTED - 通过 `wrangler secret put ADMIN_INIT_PASSWORD` 注入，勿提交明文>"
+ADMIN_LOGIN = "maoxinhe"
+BASE_URL = "https://releases.camzy.uno"
+ERROR_REPORT_BIND_TTL_DAYS = "30"
+ERROR_REPORT_CRON_BUDGET_MS = "720000"
+ERROR_REPORT_CRON_MAX = "2"
+ERROR_REPORT_LEASE_MS = "900000"
+ERROR_REPORT_MAX_FILE_MB = "25"
+ERROR_REPORT_MAX_MB = "20"
+ERROR_REPORT_MAX_QUEUE = "20"
+ERROR_REPORT_MAX_RETRY = "2"
+ERROR_REPORT_MAX_TEXT = "120000"
+ERROR_REPORT_MAX_TOKENS = "4000"
+ERROR_REPORT_MAX_UNCOMPRESSED_MB = "200"
+ERROR_REPORT_RATE_LIMIT = "3"
+ERROR_REPORT_RATE_WINDOW = "3600"
+ERROR_REPORT_SESSION_TTL = "3600"
+ERROR_REPORT_VERIFY_LIMIT = "5"
+ERROR_REPORT_VERIFY_WINDOW = "3600"
+GITHUB_CLIENT_ID = "Ov23lix8isGOSSoCOv1w"
+GLM_MODEL = "glm-4.5-flash"
+MAIL_FROM = "工单系统 <noreply@mail.catfix.top>"
+MAIL_FROM_LIST = "[\"工单系统 <noreply@mail.catfix.top>\", \"工单系统 <noreply@camzy.uno>\"]"
+MAX_UPLOAD_MB = "100"
+QQ_APPID = "1816"
+REPO_BRANCH = "main"
+REPO_NAME = "modpack"
+REPO_OWNER = "maoxinhe"
+SESSION_TTL_HOURS = "168"
+WIKI_BASE = "https://camzy.uno"
+
+# 以下为 secret，用命令注入（值不落盘）：
+#   wrangler secret put DEV_AUTH_TOKEN
+#   wrangler secret put GITHUB_TOKEN
+#   wrangler secret put GLM_API_KEY
+#   wrangler secret put GITHUB_CLIENT_SECRET
+#   wrangler secret put QQ_APPKEY
+#   wrangler secret put RESEND_API_KEY
+
+[[kv_namespaces]]
+binding = "MODS_KV"
+id = "e4d70dfbb2f64e898b1da0ea167e8104"
+
+[[r2_buckets]]
+binding = "MODS_R2"
+bucket_name = "modpack-mods"
+
+[[d1_databases]]
+binding = "MODS_D1"
+database_name = "modpack-release-db"
+database_id = "b838b9e7-5ca1-416d-a420-307be040acb7"

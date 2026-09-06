@@ -1,0 +1,242 @@
+{
+  "result": {
+    "id": "a6e37aae-1485-41cf-9341-bb79adfddd96",
+    "number": 72,
+    "metadata": {
+      "created_on": "2026-09-05T12:45:56.158952Z",
+      "source": "wrangler",
+      "author_id": "22206aed12edd33e2bfab176554fb80b",
+      "author_email": "catkinr@163.com",
+      "has_preview": false
+    },
+    "annotations": {
+      "workers/triggered_by": "secret"
+    },
+    "resources": {
+      "script": {
+        "etag": "e0ddc4c26841db69ebf232a18a10a94340691776034fff351bf21582316acc02",
+        "handlers": [
+          "fetch",
+          "scheduled"
+        ],
+        "last_deployed_from": "wrangler"
+      },
+      "script_runtime": {
+        "assets": {
+          "serve_directly": false,
+          "raw_run_worker_first": true
+        },
+        "compatibility_date": "2025-08-01",
+        "usage_model": "standard"
+      },
+      "bindings": [
+        {
+          "name": "ADMIN_EMAIL",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ADMIN_INIT_PASSWORD",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ADMIN_LOGIN",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ASSETS",
+          "type": "assets"
+        },
+        {
+          "name": "BASE_URL",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEV_AUTH_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "ERROR_REPORT_BIND_TTL_DAYS",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_CRON_BUDGET_MS",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_CRON_MAX",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_LEASE_MS",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_FILE_MB",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_MB",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_QUEUE",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_RETRY",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_TEXT",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_TOKENS",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_MAX_UNCOMPRESSED_MB",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_RATE_LIMIT",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_RATE_WINDOW",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_SESSION_TTL",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_VERIFY_LIMIT",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "ERROR_REPORT_VERIFY_WINDOW",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "GITHUB_CLIENT_ID",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "GITHUB_CLIENT_SECRET",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "GITHUB_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "GLM_API_KEY",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "GLM_MODEL",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "MAIL_FROM",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "MAIL_FROM_LIST",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "MAX_UPLOAD_MB",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "database_id": "b838b9e7-5ca1-416d-a420-307be040acb7",
+          "id": "b838b9e7-5ca1-416d-a420-307be040acb7",
+          "name": "MODS_D1",
+          "type": "d1"
+        },
+        {
+          "name": "MODS_KV",
+          "namespace_id": "e4d70dfbb2f64e898b1da0ea167e8104",
+          "type": "kv_namespace"
+        },
+        {
+          "bucket_name": "modpack-mods",
+          "name": "MODS_R2",
+          "type": "r2_bucket"
+        },
+        {
+          "name": "QQ_APPID",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "QQ_APPKEY",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "REPO_BRANCH",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "REPO_NAME",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "REPO_OWNER",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "RESEND_API_KEY",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "SESSION_TTL_HOURS",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        },
+        {
+          "name": "WIKI_BASE",
+          "text": "<REDACTED>",
+          "type": "plain_text"
+        }
+      ]
+    }
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+}
